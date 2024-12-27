@@ -15,7 +15,7 @@ def get_non_followers(cl):
     ]
 
     # Save to JSON file with timestamp
-    filename = f"non_followers.json"
+    filename = f"non_followers_{cl.username}.json"
     with open(filename, 'w') as file:
         json.dump(non_followers, file, indent=4)
     
