@@ -6,16 +6,17 @@ from unfollow import unfollow_accounts
 
 app = FastAPI()
 
+from auth import login_instagram
+from schemas import LoginRequest
+
 @app.post("/login/")
 async def login(request: LoginRequest):
     try:
         global client
-        client = login_instagram()
+        client = login_instagram(request.username, request.password)
         return {"message": "Login successful"}
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
-
-from followers import get_non_followers
 
 @app.get("/non-followers/")
 async def get_non_followers_list():

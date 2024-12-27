@@ -2,7 +2,8 @@ from pydantic import BaseModel
 from typing import List
 
 class LoginRequest(BaseModel):
-    pass
+    username: str
+    password: str
 
 class NonFollowerList(BaseModel):
     non_followers: List[str]
