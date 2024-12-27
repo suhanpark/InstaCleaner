@@ -1,0 +1,12 @@
+{
+    "hosting": {
+      "public": "frontend/build",
+      "rewrites": [{
+        "source": "/api/**",
+        "run": {
+          "serviceId": "instagram-unfollower-backend"
+        }
+      }]
+    }
+  }
+  
